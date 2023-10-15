@@ -442,7 +442,7 @@ dependencies = [
 name = "cs-exam-tool"
 version = "0.0.0"
 dependencies = [
- "inside-vm",
+ "is_elevated",
  "serde",
  "serde_json",
  "tauri",
@@ -1297,18 +1297,21 @@ dependencies = [
 ]
 
 [[package]]
-name = "inside-vm"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3518e289386082220db48c380f414722e25263af4160f8577c247dae0c6f3829"
-
-[[package]]
 name = "instant"
 version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
 dependencies = [
  "cfg-if",
+]
+
+[[package]]
+name = "is_elevated"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5299060ff5db63e788015dcb9525ad9b84f4fd9717ed2cbdeba5018cbf42f9b5"
+dependencies = [
+ "winapi",
 ]
 
 [[package]]

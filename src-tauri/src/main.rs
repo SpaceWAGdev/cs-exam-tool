@@ -1,7 +1,8 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
-use std::process::exit;
-use inside_vm::inside_vm;
+
+use crate::permissions::is_elevated;
+mod permissions;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -10,9 +11,8 @@ fn greet(name: &str) -> String {
 }
 
 fn main() {
-    if inside_vm() {
-        exit(-69);
-    }
+    println!("Is Admin: {}", is_elevated());
+
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
