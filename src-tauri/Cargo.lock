@@ -443,6 +443,7 @@ name = "cs-exam-tool"
 version = "0.0.0"
 dependencies = [
  "is_elevated",
+ "lazy_static",
  "process_list",
  "procfs",
  "serde",
