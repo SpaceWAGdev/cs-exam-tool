@@ -24,6 +24,7 @@ custom-protocol = ["tauri/custom-protocol"]
 
 [target.'cfg(windows)'.dependencies]
 is_elevated = "*"
+tasklist = "0.2.13"
 process_list = "0.2.1"
 [target.'cfg(not(windows))'.dependencies]
 procfs = "0.15.1"

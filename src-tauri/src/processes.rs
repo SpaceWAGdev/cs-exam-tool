@@ -1,11 +1,18 @@
 #[cfg(windows)]
-use process_list;
+use tasklist;
 #[cfg(not(windows))]
 use procfs;
 
 #[cfg(windows)]
 pub fn list_all_processes() -> Vec<String> {
-    // TODO: Implement Windows feature
+    let mut process_list = Vec::new();
+    unsafe {
+        let tl = tasklist::Tasklist::new();
+        for i in tl{
+            process_list.push(i.get_path())
+        }
+    }
+    process_list
 }
 
 #[cfg(not(windows))]
