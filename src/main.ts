@@ -11,12 +11,14 @@ async function greet() {
     });
   }
 }
-
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   greetInputEl = document.querySelector("#greet-input");
   greetMsgEl = document.querySelector("#greet-msg");
   document.querySelector("#greet-form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     greet();
   });
+
+  let is_elevated : Boolean = await invoke("get_admin_permissions");
+  document.querySelector("#admin_rights")!.innerHTML = is_elevated == true? "Yes" : "No";
 });
