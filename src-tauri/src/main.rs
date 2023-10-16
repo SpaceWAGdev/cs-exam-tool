@@ -18,22 +18,7 @@ fn get_admin_permissions() -> bool {
 
 #[tauri::command]
 fn get_process_list() -> Vec<String> {
-    let mut process_list = Vec::new();
-    for p in processes::list_all_processes() {
-        process_list.push(
-            match p {
-                Ok(process) => {
-                    match process.exe() {
-                        Ok(exe) => String::from(exe.to_str().unwrap()),
-                        Err(_) => continue,
-                    }
-                },
-                Err(_) => continue,
-            }
-        );
-        
-    }
-    process_list
+   processes::list_all_processes()
 }
 
 fn main() {

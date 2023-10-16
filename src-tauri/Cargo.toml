@@ -16,7 +16,6 @@ tauri-build = { version = "1.5", features = [] }
 tauri = { version = "1.5", features = ["shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-procfs = "0.15.1"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
@@ -25,3 +24,6 @@ custom-protocol = ["tauri/custom-protocol"]
 
 [target.'cfg(windows)'.dependencies]
 is_elevated = "*"
+process_list = "0.2.1"
+[target.'cfg(not(windows))'.dependencies]
+procfs = "0.15.1"

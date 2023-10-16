@@ -443,6 +443,7 @@ name = "cs-exam-tool"
 version = "0.0.0"
 dependencies = [
  "is_elevated",
+ "process_list",
  "procfs",
  "serde",
  "serde_json",
@@ -2022,6 +2023,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "134c189feb4956b20f6f547d2cf727d4c0fe06722b20a0eec87ed445a97f92da"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "process_list"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1132b222742f1d1bbe2078836970d9eac85cb354076b58534edc29aa14668ff0"
+dependencies = [
+ "winapi",
 ]
 
 [[package]]
