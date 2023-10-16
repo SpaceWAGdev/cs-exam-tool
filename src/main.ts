@@ -20,5 +20,8 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
 
   let is_elevated : Boolean = await invoke("get_admin_permissions");
-  document.querySelector("#admin_rights")!.innerHTML = is_elevated == true? "Yes" : "No";
+  document.querySelector("#admin_rights")!.innerHTML = is_elevated == true? "Admin" : "Normal User";
+
+  let process_list : string[] = await invoke("get_process_list");
+  document.querySelector("#process_list")!.innerHTML = process_list.join("\n");
 });
