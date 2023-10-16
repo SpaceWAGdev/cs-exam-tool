@@ -25,3 +25,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   let process_list : string[] = await invoke("get_process_list");
   document.querySelector("#process_list")!.innerHTML = process_list.join("\n");
 });
+
+document.addEventListener('contextmenu', event => event.preventDefault());
